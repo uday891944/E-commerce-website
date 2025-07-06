@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  
+  body {
+    @apply font-sans text-neutral-950 bg-neutral-50;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+
+  .btn {
+    @apply inline-block px-6 py-3 transition-all duration-300 rounded-md font-medium;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-500 text-primary-700 hover:bg-primary-50;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200;
+  }
+
+  .service-card {
+    @apply bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-neutral-200;
+  }
+
+  .image-hover {
+    @apply transition-all duration-500 ease-in-out;
+  }
+  
+  .image-hover:hover {
+    @apply scale-105 shadow-lg;
+  }
+  
+  .overlay {
+    @apply absolute inset-0 bg-black bg-opacity-30 opacity-0 transition-opacity duration-500;
+  }
+  
+  .image-hover:hover .overlay {
+    @apply opacity-100;
+  }
+
+  .slideshow {
+    @apply relative h-screen overflow-hidden;
+  }
+
+  .slide {
+    @apply absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-[1.5s] ease-in-out;
+  }
+
+  .slide.active {
+    @apply opacity-100;
+  }
+}
